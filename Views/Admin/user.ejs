@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include('./partial/header.ejs')%>
+
+    <body id="page-top">
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
+                    <div class="sidebar-brand-icon rotate-n-15">
+                        <i class="fas fa-laugh-wink"></i>
+                    </div>
+                    <div class="sidebar-brand-text mx-3">Admin Dashboard</div>
+                    <!-- <sup>2</sup> -->
+                </a>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
+
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin/dashboard"">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></a>
+                </li>
+
+
+     
+
+
+
+
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+
+                <!-- Nav Item - Pages Collapse Menu -->
+                
+                <!-- Nav Item - user -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/user">
+                        <i class="fas fa-users"></i>
+                        <span>User</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/post">
+                        <i class="fas fa-file-word"></i>
+                        <span>Posts</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="comments">
+                        <i class="fas fa-comments"></i>
+                        <span>Comments</span></a>
+                </li>
+
+
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
+
+                <!-- Sidebar Toggler (Sidebar) -->
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
+
+
+
+            </ul>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+
+
+
+                        <%-include('./partial/nav-top.ejs')%>
+
+                    </nav>
+   
+                    <!-- End of Topbar -->
+
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                     <!-- Page Heading -->
+                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">All Posts</h1>
+                    </div>
+                    <div class="card shadow mb-4">
+                     <div class="card-header py-3">
+                         <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                     </div>
+                     <div class="card-body">
+                         <div class="table-responsive">
+                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                 <thead>
+                                     <tr>
+                                       <th>Id</th>
+                                       <th>Name</th>
+                                       <th>Email</th>
+                                       <th>Phone</th>                                        
+                                       <th colspan="2">Operation</th>
+                                     </tr>
+                                 </thead>
+                                 
+                                 <tbody>
+                                    <% for (let i = 0; i < data.length; i++) { %>
+                                       <tr>
+                                           <td><%- data[i]._id%></td>
+                                           <td><%- data[i].name%></td>
+                                           <td><%- data[i].email %></td>
+                                           <td><%- data[i].phone %></td>
+                                           <td type="button" class="btn btn-primary btn-sm">Update</td>
+                                           <td type="button" class="btn btn-danger btn-sm">Delate</td>
+                                           
+                                          
+                                       </tr>
+                                   <% } %>
+                                 </tbody>
+                             </table>
+                         </div>
+                     </div>
+                 </div>
+
+
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+                <!-- End of Main Content -->
+
+                <%-include('./partial/footer.ejs')%>

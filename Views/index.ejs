@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./Common/head.ejs')%>
+
+   <body>
+      <%- include('./Common/header.ejs')%>
+
+
+
+         <!-- Page Header-->
+         <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+               <div class="row gx-4 gx-lg-5 justify-content-center">
+                  <div class="col-md-10 col-lg-8 col-xl-7">
+                     <div class="site-heading">
+                        <h1>Clean Blog</h1>
+                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>
+         
+         <!-- Main Content-->
+         <!-- <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+               <div class="col-md-10 col-lg-8 col-xl-7">
+                 
+                  <%for(var key of blog){%>
+                  <div class="post-preview">
+                     <a href="/blogdetails/<%=key._id%>">
+                        <h2 class="pos>t-title"><%=key.title%></h2>
+                        <h3 class="post-subtitle"><%=key.subtitle%></h3>
+                     </a>
+                     <p class="post-meta">
+                        Posted by
+                        <a href="/blogdetails/<%=key._id%>"><%=key.author%></a>
+                        <%= key.createdAt.toLocaleString('en-US', { year: 'numeric' , month: 'long'
+                                                , day: 'numeric' , hour: 'numeric' , minute: 'numeric' ,
+                                                second: 'numeric' , hour12: true }) %>
+                     </p>
+                  </div>
+                  <%}%>
+            
+            </div>
+         </div>
+         </div> -->
+
+         <%for(var key of blog){%>
+         <div class="card text-center" style="width: 70%; margin-left: 200px; border: 1px solid rgb(0, 0, 0); background-color: rgb(208, 231, 209);">
+            <div class="card-body">
+             
+                <a href="/blogdetails/<%=key._id%>">
+                  <h2 class="pos>t-title" style="color: rgb(43, 59, 179);"><%=key.title%></h2>
+                  <pre class="post-subtitle"><%=key.subtitle%></pre>
+               </a>
+               <p class="post-meta">
+                Posted by
+                <a href="/blogdetails/<%=key._id%>"><%=key.author%></a>
+                <%= key.createdAt.toLocaleString('en-US', { year: 'numeric' , month: 'long'
+                                        , day: 'numeric' , hour: 'numeric' , minute: 'numeric' ,
+                                        second: 'numeric' , hour12: true }) %>
+             </p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              <!-- <div class="card-footer">
+               <small class="text-muted">Last updated 3 mins ago</small>
+             </div> -->
+             
+            </div>
+          </div>
+          <%}%>
+
+
+
+
+
+
+         
+         <!-- Footer-->
+         <%- include('./Common/footer.ejs')%>
+            <!-- Bootstrap core JS-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Core theme JS-->
+            <script src="js/scripts.js"></script>
+   </body>
+
+</html>

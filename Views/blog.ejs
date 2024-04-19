@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('./Common/head.ejs')%>
+<body>
+   <%-include('./Common/header.ejs')%>
+   <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+      <div class="container position-relative px-4 px-lg-5">
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+              <div class="col-md-10 col-lg-8 col-xl-7">
+                  <div class="site-heading">
+                      <h2>Write Blog</h2>
+                      <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- Main Content-->
+  <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="my-5">
+              <h1>Write Your Blogs</h1>
+              <form action="/blog/create" method="post" enctype="multipart/form-data">
+                  <div class="form-floating">
+                      <input class="form-control" name="title" type="text" placeholder="Enter your name..."/>
+                      <label for="name">Title</label>
+                      
+                  </div>
+                  <div class="form-floating">
+                      <input class="form-control" name="author" type="text" placeholder="Enter your email..."/>
+                      <label for="email">Author Name</label>
+                     
+                  </div>
+                  <div class="form-floating">
+                      <input class="form-control" name="subtitle" type="text" placeholder="Enter your phone number..."/>
+                      <label for="phone">Sub Title</label>
+                    
+                  </div>
+                  <label for="phone" >Write Your Blog</label>
+                  <div class="form-floating">
+                      
+                      <textarea name="write_blog"></textarea>
+                      
+                      
+                  </div>
+
+                  <div class="form-floating">
+                      <input class="form-control" name="image" type="file" placeholder="Enter your image..."/>
+                      <label for="email">image</label>
+                     
+                  </div>
+                  
+                  <br />
+                
+                  <button class="btn btn-primary text-uppercase" type="submit">Submit</button>
+              </form>
+          </div>
+      </div>
+  </div>
+  <%-include('./Common/footer.ejs')%>
+
+</body>
+</html>
